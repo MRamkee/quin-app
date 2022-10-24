@@ -9,7 +9,7 @@ export const apiToMap = (data: any) => {
         item?.pad?.location?.name?.trim() ||
         "",
       markerOffset: 15,
-      coordinates: [+item?.pad?.latitude, +item?.pad?.longitude] || []
+      coordinates: [item?.pad?.latitude, item?.pad?.longitude] || []
     })) || []
   );
 };
