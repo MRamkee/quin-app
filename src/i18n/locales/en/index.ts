@@ -5,7 +5,7 @@
 //
 
 const messages = {
-  blogTitle: "Ramkee"
+  title: "Quin-App"
 };
 
 const allMessages = {
