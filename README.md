@@ -10,6 +10,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ![image](https://user-images.githubusercontent.com/7554386/197521977-5389c2f4-f271-45d9-b472-6e9ae24a7251.png)
 
 
+![image](https://user-images.githubusercontent.com/7554386/197548218-d93e13a4-0b60-4d89-83a0-0b9ca6df7a5e.png)
+
+
 ### `Plugins which i have used`
 1. react-simple-maps (for World Map)
 2. Material UI (for styled components)
