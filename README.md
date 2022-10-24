@@ -21,6 +21,10 @@ After completing `yarn`, you can start the application using `yarn start`.
 
 Thats it!! This app will run on [http://localhost:3000](http://localhost:3000)
 
+### `Unit Tests`
+![image](https://user-images.githubusercontent.com/7554386/197540017-5a3d9468-f097-4330-a6b4-4fb2c61e4156.png)
+
+
 
 ## Available Scripts
 
