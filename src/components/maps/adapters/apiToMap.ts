@@ -5,11 +5,11 @@ export const apiToMap = (data: any) => {
     data?.map((item) => ({
       id: item?.id || "",
       name:
-        item?.pad?.location?.name?.split(",")[0] ||
-        item?.pad?.location?.name ||
+        item?.pad?.location?.name?.split(",")[0]?.trim() ||
+        item?.pad?.location?.name?.trim() ||
         "",
       markerOffset: 15,
-      coordinates: [item?.pad?.latitude, item?.pad?.longitude] || []
+      coordinates: [+item?.pad?.latitude, +item?.pad?.longitude] || []
     })) || []
   );
 };

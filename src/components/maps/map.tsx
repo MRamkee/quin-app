@@ -47,6 +47,7 @@ export const MapChart = ({ setTooltipContent }) => {
     // Once you have the defualt launches result, send to adapters and get the appropreate data
     setIsProgressing(true);
     const getDefaultRocketLaunches = await getLaunches();
+    console.log(apiToMap(getDefaultRocketLaunches?.data?.results));
     setMapData(apiToMap(getDefaultRocketLaunches?.data?.results));
     setIsProgressing(false);
   };

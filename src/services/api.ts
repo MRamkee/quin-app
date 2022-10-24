@@ -2,8 +2,6 @@
 
 import axios from "axios";
 
-const V1 = "/v1";
-
 export const apiService = (apiEndpoint: string) => {
   const getLaunches = () =>
     axios.get(

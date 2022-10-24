@@ -15,7 +15,7 @@ describe("apiToMapView", () => {
           longitude: [15]
         },
         name: "India",
-        Launchers: "475"
+        launchers: "475"
       },
       {
         id: "345",
@@ -27,7 +27,7 @@ describe("apiToMapView", () => {
           longitude: [30]
         },
         name: "UK",
-        Launchers: "476"
+        launchers: "476"
       },
       {
         id: "789",
@@ -39,7 +39,7 @@ describe("apiToMapView", () => {
           longitude: [15]
         },
         name: "US",
-        Launchers: "100"
+        launchers: "100"
       }
     ];
 
@@ -97,21 +97,18 @@ describe("apiToMapView", () => {
     //Positive Cases
     expect(apiToMap(data1 as any)).toEqual([
       {
-        assigned: true,
         id: "123",
         name: "test",
         markerOffset: 15,
         coordinates: [12, 15]
       },
       {
-        assigned: true,
         id: "345",
         name: "Ramkee",
         markerOffset: 15,
         coordinates: [20, 30]
       },
       {
-        assigned: true,
         id: "789",
         name: "test",
         markerOffset: 15,
