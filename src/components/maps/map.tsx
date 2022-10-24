@@ -19,6 +19,7 @@ import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
 import { BasicDatePicker } from "./searchForLanches";
 import SettingIcon from "@mui/icons-material/Settings";
+import { Refresh } from "@mui/icons-material";
 import { CircularProgress } from "@mui/material";
 
 const style = {
@@ -44,6 +45,7 @@ export const MapChart = ({ setTooltipContent }) => {
 
   const getDefaultLaunches = async () => {
     // Once you have the defualt launches result, send to adapters and get the appropreate data
+    setIsProgressing(true);
     const getDefaultRocketLaunches = await getLaunches();
     setMapData(apiToMap(getDefaultRocketLaunches?.data?.results));
     setIsProgressing(false);
@@ -52,20 +54,19 @@ export const MapChart = ({ setTooltipContent }) => {
   //Get default rocket launches
   useEffect(() => {
     // By default we need to show the upcoming launches
-    setIsProgressing(true);
     getDefaultLaunches();
   }, []);
 
   //This will be called when we apply the filters like Date and agencies
-  const setFilters = (stDate, endDate, agency) => {
+  const setFilters = (stDate, endDate, agency, success) => {
     handleClose();
     setIsProgressing(true);
-    getLaunchesByAgencies(agency);
+    getLaunchesByAgencies(agency, success);
   };
 
-  const getLaunchesByAgencies = async (agency) => {
+  const getLaunchesByAgencies = async (agency, success) => {
     // Once you have the filtered launches result, send to adapters and get the appropreate data
-    const launches = await getLaunchesByID(agency || "475");
+    const launches = await getLaunchesByID(agency || "475", success);
     setMapData(apiToMap(launches?.data?.results));
     setIsProgressing(false);
   };
@@ -79,8 +80,15 @@ export const MapChart = ({ setTooltipContent }) => {
         </Box>
       )}
       {/** Title Header and Filter Button */}
-      <Box margin={"10px !important"} padding={"10px"}>
+      <Box padding={"10px"}>
         <h2>Moon Rocket Launches: </h2>
+        <Button
+          style={{ float: "right" }}
+          onClick={() => getDefaultLaunches()}
+          startIcon={<Refresh />}
+        >
+          Reload
+        </Button>
         <Button
           style={{ float: "right" }}
           onClick={handleOpen}
@@ -104,7 +112,7 @@ export const MapChart = ({ setTooltipContent }) => {
       >
         <Fade in={open}>
           <Box sx={style}>
-            <header>Search for Lauches: </header>
+            <h4>Search for Lauches: </h4>
             <div>
               <BasicDatePicker params={setFilters} />
             </div>

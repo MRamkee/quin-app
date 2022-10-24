@@ -13,7 +13,7 @@ export const apiService = (apiEndpoint: string) => {
     axios.get(
       "https://lldev.thespacedevs.com/2.2.0/agencies/?featured=true&format=json"
     );
-  const getLaunchesByID = (id: string) =>
+  const getLaunchesByID = (id: string, success?: boolean) =>
     axios.get(
       `https://lldev.thespacedevs.com/2.2.0/launch/upcoming/?format=json&limit=20&offset=60`
     );
