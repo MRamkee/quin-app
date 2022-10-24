@@ -10,6 +10,18 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ![image](https://user-images.githubusercontent.com/7554386/197521977-5389c2f4-f271-45d9-b472-6e9ae24a7251.png)
 
 
+### `Plugins which i have used`
+1. react-simple-maps (for World Map)
+2. Material UI (for styled components)
+
+### `How to run`
+You just have to clone my repo and run `yarn` in the main folder.
+
+After completing `yarn`, you can start the application using `yarn start`. 
+
+Thats it!! This app will run on [http://localhost:3000](http://localhost:3000)
+
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -36,10 +48,6 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### Plugins which i have used
-1. react-simple-maps (for World Map)
-2. Material UI (for styled components)
 
 
 ### `npm run eject`
