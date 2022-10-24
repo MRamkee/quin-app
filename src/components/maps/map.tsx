@@ -8,19 +8,19 @@ import {
   Marker
 } from "react-simple-maps";
 
-import { apiService } from "../../services/api";
-import { worldMapData } from "./mock";
-import { apiToMap } from "./adapters/apiToMap";
-
 import Backdrop from "@mui/material/Backdrop";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
-import { BasicDatePicker } from "./searchForLanches";
 import SettingIcon from "@mui/icons-material/Settings";
 import { Refresh } from "@mui/icons-material";
 import { CircularProgress } from "@mui/material";
+
+import { apiService } from "../../services/api";
+import { worldMapData } from "./mock";
+import { apiToMap } from "./adapters/apiToMap";
+import { BasicDatePicker } from "./searchForLanches";
 
 const style = {
   position: "absolute" as "absolute",
@@ -75,7 +75,7 @@ export const MapChart = ({ setTooltipContent }) => {
     <>
       {/** Display the spinner when the API result is in pendint state */}
       {isProgressing && (
-        <Box sx={{ display: "flex", margin: "auto" }}>
+        <Box className={"loading"}>
           <CircularProgress />
         </Box>
       )}
@@ -151,6 +151,7 @@ export const MapChart = ({ setTooltipContent }) => {
               <circle cx="12" cy="10" r="3" />
               <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
             </g>
+
             <text
               textAnchor="middle"
               y={markerOffset}

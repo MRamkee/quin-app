@@ -1,6 +1,7 @@
 // © Copyright 2022 Ramkee-Mukuru Quin-App
 
 import React, { useState } from "react";
+import ReactTooltip from "react-tooltip";
 
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -23,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
 const Navbar = () => {
   const classes = useStyles();
   const [content, setContent] = useState("");
+  console.log(content);
 
   return (
     <AppBar position="static">
@@ -39,8 +41,10 @@ const Navbar = () => {
           Quin-App
         </Typography>
       </Toolbar>
-
-      <MapChart setTooltipContent={setContent} />
+      <div>
+        <MapChart setTooltipContent={setContent} />
+        <ReactTooltip>{content}</ReactTooltip>
+      </div>
     </AppBar>
   );
 };
